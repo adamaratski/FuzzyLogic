@@ -1,6 +1,5 @@
-﻿namespace Math.Actions.Distances
+﻿namespace FuzzyLogic.Distances
 {
-    using FuzzyLogic.Distances;
     using System;
     using System.Linq;
 
@@ -15,7 +14,7 @@
                 throw new ArgumentException("Length of arguments is not equal");
             }
 
-            return arrayA.Select((t, index) => System.Math.Abs(t - arrayB[index])).Sum() / arrayA.Length;
+            return arrayA.Select((t, index) => Math.Abs(t - arrayB[index])).Sum() / arrayA.Length;
         }
     }
 }

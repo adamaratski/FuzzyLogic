@@ -1,18 +1,14 @@
-﻿namespace FuzzyLogic.Clustering
-{
-    using FuzzyLogic.Common;
-    using FuzzyLogic.Criteries;
-    using FuzzyLogic.Distances;
-    using FuzzyLogic.Normirations;
-    using FuzzyLogic.TClosure;
-    using Math.Actions.Criteries;
-    using Math.Actions.ThresholdFilters;
-    using System;
-    using System.Collections.Generic;
-    using System.Globalization;
-    using System.Linq;
-    using System.Xml;
+﻿using FuzzyLogic.Common;
+using FuzzyLogic.Criteries;
+using FuzzyLogic.Distances;
+using FuzzyLogic.Normirations;
+using FuzzyLogic.TClosure;
+using Math.Actions.ThresholdFilters;
+using System.Globalization;
+using System.Xml;
 
+namespace FuzzyLogic.Clustering
+{
     public class DAFCTAGA
     {
         public IEnumerable<KeyValuePair<int[], double>> Execute(double[,] source, Distance distance, Normiration normiration, Criterion criterion, TAction action, out double[,] data)

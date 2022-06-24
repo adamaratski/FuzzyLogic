@@ -1,15 +1,10 @@
-﻿namespace Math.Clustering
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.Linq;
-    using Actions;
-    using Actions.Criteries;
-    using FuzzyLogic.Clustering;
-    using FuzzyLogic.Common;
-    using FuzzyLogic.Criteries;
+﻿using System.Diagnostics;
+using FuzzyLogic.Clustering;
+using FuzzyLogic.Common;
+using FuzzyLogic.Criteries;
 
+namespace Math.Clustering
+{
     public class DAFCu : DAFC
     {
         /// <summary>

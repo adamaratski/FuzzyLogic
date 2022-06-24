@@ -1,6 +1,5 @@
-﻿namespace Math.Actions.Criteries
+﻿namespace FuzzyLogic.Criteries
 {
-    using FuzzyLogic.Criteries;
     using System;
 
     public class F1 : Criterion
@@ -9,13 +8,13 @@
 
         public override double GetValue(double[,] matrix, int[] clusters, double treshold)
         {
-            Double criterion = 0;
-            Int32 width = matrix.GetLength(0);
+            double criterion = 0;
+            int width = matrix.GetLength(0);
             foreach (int variator in clusters)
             {
-                Int32 cardiagan = 0;
-                Double summary = 0;
-                for (Int32 index = 0; index < width; index++)
+                int cardiagan = 0;
+                double summary = 0;
+                for (int index = 0; index < width; index++)
                 {
                     if (matrix[variator, index] >= treshold)
                     {

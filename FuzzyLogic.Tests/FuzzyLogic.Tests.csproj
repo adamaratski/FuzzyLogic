@@ -4,6 +4,51 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Data\Matrix\Composition\a.txt" />
+    <None Remove="Data\Matrix\Composition\b.txt" />
+    <None Remove="Data\Matrix\Composition\c.txt" />
+    <None Remove="Data\Matrix\DAFC\a.txt" />
+    <None Remove="Data\Matrix\DAFC\The Anderson%27s iris data set.txt" />
+    <None Remove="Data\Matrix\Normalization\a.txt" />
+    <None Remove="Data\Matrix\Normalization\b.txt" />
+    <None Remove="Data\Matrix\RelationMatrix\a.txt" />
+    <None Remove="Data\Matrix\RelationMatrix\b.txt" />
+    <None Remove="Data\Matrix\RelationMatrix\d.txt" />
+    <None Remove="Data\Matrix\RelationMatrix\с.txt" />
+    <None Remove="Data\Matrix\Unitarization\a.txt" />
+    <None Remove="Data\Matrix\Unitarization\b.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\Matrix\Composition\a.txt" />
+    <EmbeddedResource Include="Data\Matrix\Composition\b.txt" />
+    <EmbeddedResource Include="Data\Matrix\Composition\c.txt" />
+    <EmbeddedResource Include="Data\Matrix\DAFC\a.txt" />
+    <EmbeddedResource Include="Data\Matrix\DAFC\The Anderson's iris data set.txt" />
+    <EmbeddedResource Include="Data\Matrix\Normalization\a.txt" />
+    <EmbeddedResource Include="Data\Matrix\Normalization\b.txt" />
+    <EmbeddedResource Include="Data\Matrix\RelationMatrix\a.txt" />
+    <EmbeddedResource Include="Data\Matrix\RelationMatrix\b.txt" />
+    <EmbeddedResource Include="Data\Matrix\RelationMatrix\d.txt" />
+    <EmbeddedResource Include="Data\Matrix\RelationMatrix\с.txt" />
+    <EmbeddedResource Include="Data\Matrix\Unitarization\a.txt" />
+    <EmbeddedResource Include="Data\Matrix\Unitarization\b.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.2.8" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.8" />
+    <PackageReference Include="coverlet.collector" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FuzzyLogic\FuzzyLogic.csproj" />
+  </ItemGroup>
 
 </Project>
