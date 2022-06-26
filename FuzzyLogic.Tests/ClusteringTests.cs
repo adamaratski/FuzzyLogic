@@ -18,13 +18,12 @@ namespace FuzzyLogic.Tests
             Matrix matrix = 1 - source.NormirateColumns<Normalization>().GetRelationMatrixForRows<EuclidianDistance>();
             matrix = matrix.Round(8);
             Clustering.DAFC dafc = new Clustering.DAFC();
-            Int32 intersection;
-            var decisions = dafc.Execute(matrix.ToArray(false), 3, out intersection);
-            Double criterionValue;
-            var optimal = dafc.FindOptimal<F1>(decisions, matrix.ToArray(false), out criterionValue);
+            var decisions = dafc.Execute(matrix.ToArray(false), 3, out int intersection);
+            var optimal = dafc.FindOptimal<F1>(decisions, matrix.ToArray(false), out double criterionValue);
             // decisions count
             Assert.AreEqual(optimal.Count(), decisionsCount);
-            var result = optimal.First();
+            var result = optimal.FirstOrDefault();
+            Assert.IsNotNull(result);
             // cluster
             Assert.IsTrue(cluster.SequenceEqual(result.Key));
             // alafa

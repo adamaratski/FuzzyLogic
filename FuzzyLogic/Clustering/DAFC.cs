@@ -31,7 +31,7 @@ namespace FuzzyLogic.Clustering
         public IEnumerable<KeyValuePair<int[], double>> Execute(double[,] data, int clusterCount, double[] thresholds, out int intersections)
         {
             intersections = -1;
-            IEnumerable<KeyValuePair<int[], double>> result = null;
+            var result = Enumerable.Empty<KeyValuePair<int[], double>>();
             do
             {
                 intersections++;
@@ -111,6 +111,11 @@ namespace FuzzyLogic.Clustering
             return optimalResults;
         }
 
+        public IEnumerable<int[]> Clusterize1(double[,] data, int clusterCount, double threshold, int intersectionsLimit)
+        {
+
+        }
+
         /// <summary>
         /// The clusterize.
         /// </summary>
@@ -131,11 +136,6 @@ namespace FuzzyLogic.Clustering
         /// </returns>
         public IEnumerable<int[]> Clusterize(double[,] data, int clusterCount, double threshold, int intersectionsLimit)
         {
-            if (threshold == 0.73863509)
-            {
-
-            }
-
             int size = data.GetLength(0);
 
             // Validation of existance decision
@@ -144,7 +144,7 @@ namespace FuzzyLogic.Clustering
             // Minimal power
             int minimalPower = size;
 
-            // Maximal pwoer
+            // Maximal power
             int maximalPower = 0;
 #if Parallel
             Parallel.For(0, size, clusterIndex =>
@@ -243,7 +243,7 @@ namespace FuzzyLogic.Clustering
                     goto next;
                 }
 
-                yield return variation.Clone() as int[];
+                yield return variation.Clone<int[]>();
 
             // Generate new sequence
             next:
@@ -277,5 +277,6 @@ namespace FuzzyLogic.Clustering
                 }
             }
         }
+
     }
 }
