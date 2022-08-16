@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FuzzyLogic\FuzzyLogic.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="FIS\NewFolder\" />
+  </ItemGroup>
+
 </Project>

@@ -23,6 +23,21 @@ namespace FuzzyLogic.Clustering
             return true;
         }
 
+        public IEnumerable<KeyValuePair<int[], double>> Execute(double[,] data, out int intersections)
+        {
+            for (int count = 2; count < data.GetLength(0); count++)
+            {
+                var result = Execute(data, count, out intersections);
+                if (result.Any())
+                {
+                    return result;
+                }
+            }
+
+            intersections = 0;
+            return Enumerable.Empty<KeyValuePair<int[], double>>();
+        }
+
         public IEnumerable<KeyValuePair<int[], double>> Execute(double[,] data, int clusterCount, out int intersections)
         {
             return Execute(data, clusterCount, new All().GetFilteredValues(data).ToArray(), out intersections);
@@ -109,11 +124,6 @@ namespace FuzzyLogic.Clustering
             }
 
             return optimalResults;
-        }
-
-        public IEnumerable<int[]> Clusterize1(double[,] data, int clusterCount, double threshold, int intersectionsLimit)
-        {
-
         }
 
         /// <summary>
